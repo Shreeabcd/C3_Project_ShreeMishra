@@ -17,6 +17,7 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
+
     public boolean isRestaurantOpen() {
 
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
@@ -71,6 +72,14 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public Integer calculateOrderFromMenu(List<String> itemlist) {
+        int total = 0;
+        for (String i: itemlist){
+            total = total + findItemByName(i).getPrice();
+        }
+        return total;
     }
 
 }
